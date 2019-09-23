@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scene.FeedbackController">
+   <children>
+      <JFXSlider fx:id="starSlider" layoutX="230.0" layoutY="100.0" majorTickUnit="1.0" max="5.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" value="5.0" />
+      <JFXTextArea fx:id="feedbackTextArea" layoutX="114.0" layoutY="149.0" prefHeight="169.0" prefWidth="372.0" promptText="Suggestions?" />
+      <Text layoutX="269.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Feedback" />
+      <JFXButton fx:id="submitButton" layoutX="267.0" layoutY="344.0" onAction="#submitButton" text="Submit" />
+      <Text layoutX="114.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rate your call" />
+      <Text layoutX="430.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dont dare to give negative feedback I work so hard for this">
+         <font>
+            <Font size="6.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>

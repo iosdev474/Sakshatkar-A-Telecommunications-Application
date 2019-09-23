@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="146.0" prefWidth="201.0" style="-fx-background-color: #222222;" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scene.Popup">
+   <children>
+      <Pane layoutX="14.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="116.0" prefWidth="174.0" style="-fx-background-color: #2c2e38; -fx-background-radius: 10;">
+         <children>
+            <JFXButton layoutX="8.0" layoutY="43.0" onAction="#back" style="-fx-background-color: #67ffd8; -fx-background-radius: 100;" text="&lt;" />
+            <JFXButton layoutX="136.0" layoutY="43.0" onAction="#forward" style="-fx-background-color: #67ffd8; -fx-background-radius: 100;" text="&gt;" />
+            <JFXButton fx:id="set" layoutX="42.0" layoutY="43.0" onAction="#set" prefHeight="31.0" prefWidth="90.0" style="-fx-background-color: #67ffd8; -fx-background-radius: 20;" text="Online" textAlignment="CENTER" />
+         </children>
+      </Pane>
+   </children>
+</Pane>

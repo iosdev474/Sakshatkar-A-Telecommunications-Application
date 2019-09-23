@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #222222;" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scene.VideoHomePageController">
+   <children>
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="700.0" prefWidth="1260.0" style="-fx-background-color: #2C2E38; -fx-background-radius: 15;" />
+      <ImageView fx:id="videoImageView" fitHeight="600.0" fitWidth="800.0" layoutX="159.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXButton fx:id="join" buttonType="RAISED" layoutX="1108.0" layoutY="431.0" onAction="#join" prefHeight="111.0" prefWidth="111.0" style="-fx-background-color: #67ffd8; -fx-background-radius: 120;" text="Join">
+         <font>
+            <Font name="Consolas" size="20.0" />
+         </font>
+         <ripplerFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="TRANSPARENT" />
+                  <Stop color="#2c2e38" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </ripplerFill></JFXButton>
+      <JFXToggleButton fx:id="video" layoutX="1090.0" layoutY="178.0" onAction="#videoT" text="Video" textFill="WHITE" toggleColor="#67ffd8" toggleLineColor="#4fb99c">
+         <font>
+            <Font name="Consolas" size="18.0" />
+         </font></JFXToggleButton>
+      <JFXToggleButton fx:id="audio" layoutX="1090.0" layoutY="247.0" onAction="#audioT" text="Audio" textFill="WHITE" toggleColor="#67ffd8" toggleLineColor="#4fb99c">
+         <font>
+            <Font name="Consolas" size="18.0" />
+         </font></JFXToggleButton>
+      <JFXToggleButton fx:id="present" layoutX="1090.0" layoutY="318.0" onAction="#presentT" text="Present" textFill="WHITE" toggleColor="#67ffd8" toggleLineColor="#4fb99c">
+         <font>
+            <Font name="Consolas" size="18.0" />
+         </font></JFXToggleButton>
+      <JFXButton fx:id="back" buttonType="RAISED" layoutX="33.0" layoutY="30.0" onAction="#back" style="-fx-background-color: #67ffd8; -fx-background-radius: 10;" text="◄ Back">
+         <font>
+            <Font name="Consolas" size="18.0" />
+         </font></JFXButton>
+   </children>
+</Pane>

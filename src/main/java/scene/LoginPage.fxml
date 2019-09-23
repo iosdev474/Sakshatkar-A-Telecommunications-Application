@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #222222;" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scene.LoginController">
+   <children>
+      <Pane fx:id="registerPane" layoutX="14.0" layoutY="14.0" prefHeight="372.0" prefWidth="574.0" style="-fx-background-color: #2C2E38; -fx-background-radius: 15;" visible="false">
+         <children>
+            <JFXTextField fx:id="registerNameTextField" focusColor="#67ffc8" layoutX="14.0" layoutY="42.0" prefHeight="31.0" prefWidth="242.0" promptText="Name" style="-fx-prompt-text-fill: white; -fx-text-inner-color: #67ffc8;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="registerUsernameTextField" focusColor="#67ffc8" layoutX="14.0" layoutY="79.0" prefHeight="31.0" prefWidth="242.0" promptText="Username" style="-fx-prompt-text-fill: white; -fx-text-inner-color: #67ffc8;" unFocusColor="WHITE" />
+            <JFXPasswordField fx:id="registerPasswordField" focusColor="#67ffc8" layoutX="14.0" layoutY="115.0" prefHeight="31.0" prefWidth="242.0" promptText="Password" style="-fx-prompt-text-fill: white; -fx-text-inner-color: #67ffc8;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="registerEmailTextField" focusColor="#67ffc8" layoutX="14.0" layoutY="150.0" prefHeight="31.0" prefWidth="242.0" promptText="Email" style="-fx-prompt-text-fill: white; -fx-text-inner-color: #67ffc8;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="registerCompanyTextField" focusColor="#67ffc8" layoutX="14.0" layoutY="189.0" prefHeight="31.0" prefWidth="242.0" promptText="Company" style="-fx-prompt-text-fill: white; -fx-text-inner-color: #67ffc8;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="registerContactEmailTextField" focusColor="#67ffc8" layoutX="14.0" layoutY="225.0" prefHeight="31.0" prefWidth="242.0" promptText="Contact Email" style="-fx-prompt-text-fill: white; -fx-text-inner-color: #67ffc8;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="registerContactPhoneTextField" focusColor="#67ffc8" layoutX="14.0" layoutY="262.0" prefHeight="31.0" prefWidth="242.0" promptText="Phone Number" style="-fx-prompt-text-fill: white; -fx-text-inner-color: #67ffc8;" unFocusColor="WHITE" />
+            <JFXButton fx:id="profilePictureButton" buttonType="RAISED" layoutX="341.0" layoutY="76.0" onAction="#profilePictureButton" style="-fx-background-color: #67ffd8; -fx-background-radius: 10;" text="Profile Picture">
+               <font>
+                  <Font name="Consolas" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="351.0" layoutY="147.0" onAction="#uploadButton" style="-fx-background-color: #67ffd8; -fx-background-radius: 10;" text="Upload Resume">
+               <font>
+                  <Font name="Consolas" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXTextArea fx:id="haTextArea" focusColor="#67ffd8" layoutX="306.0" layoutY="195.0" prefHeight="98.0" prefWidth="242.0" promptText="Honors/Achievements" style="-fx-prompt-text-fill: white; -fx-text-inner-color: #67ffd8;" unFocusColor="WHITE" />
+         </children>
+      </Pane>
+      <Pane fx:id="loginPane" layoutX="14.0" layoutY="14.0" prefHeight="372.0" prefWidth="574.0" style="-fx-background-color: #2C2E38; -fx-background-radius: 15;">
+         <children>
+            <JFXTextField fx:id="userNameTextField" focusColor="#67ffc8" layoutX="193.0" layoutY="114.0" prefHeight="31.0" prefWidth="209.0" promptText="Username" style="-fx-prompt-text-fill: white; -fx-text-inner-color: #67ffc8;" unFocusColor="WHITE" />
+            <JFXPasswordField fx:id="passwordTextField" focusColor="#67ffc8" layoutX="193.0" layoutY="203.0" prefHeight="31.0" prefWidth="209.0" promptText="Password" style="-fx-prompt-text-fill: white; -fx-text-inner-color: #67ffc8;" unFocusColor="WHITE" />
+         </children>
+      </Pane>
+      <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="83.0" layoutY="326.0" onAction="#loginButton" style="-fx-background-color: #67ffd8; -fx-background-radius: 10;" text="Login">
+         <font>
+            <Font name="Consolas" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="registerButton" buttonType="RAISED" layoutX="390.0" layoutY="326.0" onAction="#registerButton" style="-fx-background-color: #67ffd8; -fx-background-radius: 10;" text="Register">
+         <font>
+            <Font name="Consolas" size="18.0" />
+         </font>
+      </JFXButton>
+      <Text fill="#909090" layoutX="213.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ah shit, Here we go again!" />
+      <Text fx:id="error" fill="RED" layoutX="193.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" visible="false" wrappingWidth="241.6708984375" />
+      <JFXSpinner fx:id="loadingSpinner" layoutX="11.0" layoutY="10.0" visible="false" />
+      <Text fx:id="projectText" fill="#dddddd" layoutX="184.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Some project" textAlignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS Bold" size="36.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>

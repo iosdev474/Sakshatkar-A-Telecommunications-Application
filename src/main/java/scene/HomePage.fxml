@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #222222;" xmlns="http://javafx.com/javafx/8.0.221" xmlns:fx="http://javafx.com/fxml/1" fx:controller="scene.HomePageController">
+   <children>
+      <Pane prefHeight="720.0" prefWidth="270.0" style="-fx-background-color: #2C2E38;">
+         <children>
+            <JFXTextField fx:id="searchTextField" focusColor="#67ffc8" layoutX="18.0" layoutY="72.0" onKeyPressed="#search" prefHeight="31.0" prefWidth="234.0" promptText="Search" style="-fx-prompt-text-fill: white; -fx-text-inner-color: #67FFC8;" unFocusColor="WHITE" />
+            <Text fx:id="nameText" fill="#67ffc8" layoutY="43.0" onMouseClicked="#status" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="CENTER" wrappingWidth="270.0">
+               <font>
+                  <Font name="Comic Sans MS" size="18.0" />
+               </font></Text>
+            <JFXButton fx:id="settingsButton" buttonType="RAISED" onAction="#settingsButton" prefHeight="50.0" prefWidth="50.0" style="-fx-background-radius: 100;" text="⚙" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <ripplerFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#f2ff0000" />
+                        <Stop color="#69ffc8" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </ripplerFill></JFXButton>
+            <JFXButton fx:id="chatButton" ellipsisString="" layoutY="138.0" onAction="#chatButton" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: white;" text="💬" textAlignment="CENTER">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="14.0" />
+               </font>
+               <ripplerFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#edff69" />
+                        <Stop color="#67ffc8" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill></JFXButton>
+            <JFXButton fx:id="callButton" layoutX="90.0" layoutY="138.0" onAction="#callButton" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: #2C2E38;" text="📞" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="14.0" />
+               </font>
+               <ripplerFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#edff69" />
+                        <Stop color="#67ffc8" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill></JFXButton>
+            <JFXButton fx:id="contactButton" layoutX="180.0" layoutY="138.0" onAction="#contactButton" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: #2C2E38;" text="📖" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+               <ripplerFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#edff69" />
+                        <Stop color="#67ffc8" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill></JFXButton>
+            <Pane fx:id="chatPane" layoutY="170.0" prefHeight="550.0" prefWidth="270.0" style="-fx-background-color: #2C2E38;">
+               <children>
+                  <Text fill="WHITE" layoutX="14.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Groups">
+                     <font>
+                        <Font name="Consolas" size="20.0" />
+                     </font></Text>
+                  <JFXButton fx:id="addChatButton" buttonType="RAISED" layoutX="191.0" layoutY="9.0" onAction="#addChatButton" style="-fx-background-color: #67ffc8; -fx-background-radius: 10;" text="Create">
+                     <ripplerFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#f2ff0000" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill></JFXButton>
+                  <JFXListView fx:id="chatListView" layoutY="50.0" prefHeight="500.0" prefWidth="270.0" style="-fx-background-color: #373A44;" />
+               </children>
+            </Pane>
+            <Pane fx:id="callPane" layoutY="170.0" prefHeight="550.0" prefWidth="270.0" style="-fx-background-color: #2C2E38;">
+               <children>
+                  <Text fill="WHITE" layoutX="14.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recent Calls">
+                     <font>
+                        <Font name="Consolas" size="20.0" />
+                     </font></Text>
+                  <JFXListView fx:id="callListView" layoutY="50.0" prefHeight="500.0" prefWidth="270.0" style="-fx-background-color: #373A44;" />
+               </children>
+            </Pane>
+            <Pane fx:id="contactPane" layoutY="170.0" prefHeight="550.0" prefWidth="270.0" style="-fx-background-color: #2C2E38;" visible="false">
+               <children>
+                  <Text fill="WHITE" layoutX="14.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contacts">
+                     <font>
+                        <Font name="Consolas" size="20.0" />
+                     </font></Text>
+                  <JFXListView fx:id="contactListView" layoutY="50.0" prefHeight="500.0" prefWidth="270.0" style="-fx-background-color: #373A44;" />
+                  <JFXButton fx:id="getSuggestionButton" buttonType="RAISED" layoutX="127.0" layoutY="9.0" onAction="#getSuggestionButton" style="-fx-background-color: #67ffc8; -fx-background-radius: 10;" text="Get Suggestions">
+                     <ripplerFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#f2ff0000" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill></JFXButton>
+               </children>
+            </Pane>
+            <JFXListView fx:id="searchResultListView" layoutY="170.0" prefHeight="550.0" prefWidth="270.0" style="-fx-background-color: #2C2E38;" visible="false" />
+            <JFXButton fx:id="notificationButton" buttonType="RAISED" layoutX="220.0" onAction="#notificationButton" prefHeight="50.0" prefWidth="50.0" style="-fx-background-radius: 100;" text="🔔" textFill="RED">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <ripplerFill>
+                  <RadialGradient centerX="0.5284090909090909" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#f2ff0000" />
+                        <Stop color="#69ffc8" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </ripplerFill>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane fx:id="profilePane" layoutX="284.0" layoutY="13.0" prefHeight="693.0" prefWidth="983.0" style="-fx-background-color: #2C2E38; -fx-background-radius: 15;">
+         <children>
+            <JFXButton fx:id="addFriendButton" buttonType="RAISED" layoutX="831.0" layoutY="13.0" onAction="#addFriendButton" style="-fx-background-color: #67FFC8; -fx-background-radius: 10;" text="Add Friend">
+               <font>
+                  <Font name="Consolas" size="20.0" />
+               </font></JFXButton>
+            <Text fx:id="userName" fill="#67ffc8" layoutX="285.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@User name" wrappingWidth="300.0">
+               <font>
+                  <Font name="Comic Sans MS Bold Italic" size="15.0" />
+               </font></Text>
+            <Text fx:id="name" fill="WHITE" layoutX="285.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name Name" wrappingWidth="300.0">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font></Text>
+            <Text fx:id="userLastSeen" fill="WHITE" layoutX="285.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="user Last Seen" wrappingWidth="300.0" />
+            <Circle fx:id="userImage" fill="#67ffc8" layoutX="153.0" layoutY="143.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+            <Line endX="300.0" layoutX="385.0" layoutY="162.0" startX="-100.0" stroke="#67ffc8" />
+            <Pane layoutX="53.0" layoutY="181.0" prefHeight="80.0" prefWidth="200.0" style="-fx-background-color: #2C2E38; -fx-opacity: 0.5;">
+               <children>
+                  <Text fx:id="status" fill="#40ff00" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" textAlignment="CENTER" wrappingWidth="199.99999046325684">
+                     <font>
+                        <Font name="Consolas Bold" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="53.0" layoutY="289.0" prefHeight="360.0" prefWidth="884.0" style="-fx-background-color: #67ffc8; -fx-background-radius: 20;">
+               <children>
+                  <Text fx:id="contactEmail" fill="#2c2e38" layoutX="13.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="contact E-mail" wrappingWidth="300.0">
+                     <font>
+                        <Font name="Consolas Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="company" fill="#2c2e38" layoutX="13.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Company" wrappingWidth="300.0">
+                     <font>
+                        <Font name="Consolas Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="email" fill="#2c2e38" layoutX="13.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" wrappingWidth="300.0">
+                     <font>
+                        <Font name="Consolas Bold" size="36.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="contactPhone" fill="#2c2e38" layoutX="13.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="contact Phone number" wrappingWidth="300.0">
+                     <font>
+                        <Font name="Consolas Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="resumeText" fill="#0033ff" layoutX="13.0" layoutY="312.0" onMouseClicked="#copy" strokeType="OUTSIDE" strokeWidth="0.0" text="Resume" wrappingWidth="300.0">
+                     <font>
+                        <Font name="Consolas Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#2c2e38" layoutX="506.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Honors and Achievements" wrappingWidth="300.0">
+                     <font>
+                        <Font name="Consolas Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <JFXTextArea fx:id="haTextArea" layoutX="443.0" layoutY="88.0" prefHeight="219.0" prefWidth="426.0" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="userPane" layoutX="284.0" layoutY="13.0" prefHeight="693.0" prefWidth="983.0" style="-fx-background-color: #2C2E38; -fx-background-radius: 15;" visible="false">
+         <children>
+            <Text fx:id="userNameText" fill="WHITE" layoutX="30.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Group name">
+               <font>
+                  <Font name="Consolas Bold" size="64.0" />
+               </font></Text>
+            <JFXListView fx:id="userChatListView" layoutX="14.0" layoutY="191.0" prefHeight="405.0" prefWidth="956.0" style="-fx-background-radius: 10;" />
+            <Pane layoutX="543.0" layoutY="18.0" prefHeight="70.0" prefWidth="426.0" style="-fx-background-color: #373A44; -fx-background-radius: 15;">
+               <children>
+                  <JFXButton layoutX="332.0" layoutY="21.0" onAction="#connectVideoCallButton" style="-fx-background-color: #67FFC8; -fx-background-radius: 10;" text="Connect" />
+                  <JFXTextField fx:id="connectTextField" layoutX="20.0" layoutY="19.0" prefHeight="31.0" prefWidth="300.0" promptText="Enter video call URL" style="-fx-prompt-text-fill: white; -fx-text-inner-color: #67ffc8;" />
+               </children>
+            </Pane>
+            <Pane layoutX="626.0" layoutY="106.0" prefHeight="70.0" prefWidth="343.0" style="-fx-background-color: #373A44; -fx-background-radius: 15;">
+               <children>
+                  <JFXButton fx:id="inviteFriend" buttonType="RAISED" layoutX="233.0" layoutY="20.0" onAction="#addFriendToGroupButton" ripplerFill="#67ffc8" style="-fx-background-color: #67ffc8; -fx-background-radius: 10;" text="Add Friend" />
+                  <JFXButton fx:id="videoCallButton" buttonType="RAISED" layoutX="126.0" layoutY="20.0" onAction="#videoCallButton" ripplerFill="#67ffc8" style="-fx-background-color: #67ffc8; -fx-background-radius: 10;" text="Video Call" />
+                  <JFXButton fx:id="audioCallButton" buttonType="RAISED" layoutX="18.0" layoutY="20.0" onAction="#audioCallButton" ripplerFill="#67ffc8" style="-fx-background-color: #67ffc8; -fx-background-radius: 10;" text="Audio Call" />
+               </children>
+            </Pane>
+            <Pane layoutX="14.0" layoutY="609.0" prefHeight="70.0" prefWidth="956.0" style="-fx-background-color: #373A44; -fx-background-radius: 15;">
+               <children>
+                  <JFXTextField fx:id="messageTextField" layoutX="14.0" layoutY="20.0" onKeyPressed="#messageTextField" prefHeight="31.0" prefWidth="842.0" promptText="Type a message" style="-fx-prompt-text-fill: white; -fx-text-inner-color: #67ffc8;" />
+                  <JFXButton buttonType="RAISED" layoutX="868.0" layoutY="20.0" onAction="#fileButton" style="-fx-background-color: #67ffc8; -fx-background-radius: 10;" text="Add File" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="newGroupPane" layoutX="284.0" layoutY="13.0" prefHeight="693.0" prefWidth="983.0" style="-fx-background-color: #2C2E38; -fx-background-radius: 15;" visible="false">
+         <children>
+            <JFXListView fx:id="newGroupInviteListView" layoutX="519.0" layoutY="13.0" prefHeight="666.0" prefWidth="450.0" style="-fx-background-insets: 0; -fx-background-color: #373A44; -fx-background-radius: 15;" />
+            <JFXButton fx:id="newGroupOkButton" buttonType="RAISED" layoutX="317.0" layoutY="619.0" onAction="#newGroupOkButton" prefWidth="100.0" style="-fx-background-color: #67FFC8; -fx-background-radius: 6;" text="ok">
+               <ripplerFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#73ffb6" />
+                        <Stop color="#f9ff73" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
+               <font>
+                  <Font name="Consolas" size="20.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="newGroupCancelButton" buttonType="RAISED" layoutX="180.0" layoutY="619.0" onAction="#newGroupCancelButton" style="-fx-background-color: #67FFC8; -fx-background-radius: 6;" text="Cancel">
+               <ripplerFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#73ffb6" />
+                        <Stop color="#f9ff73" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill>
+               <font>
+                  <Font name="Consolas" size="20.0" />
+               </font></JFXButton>
+            <Label layoutX="17.0" layoutY="14.0" prefHeight="183.0" prefWidth="489.0" text=" Invite People To Group" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Consolas" size="36.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="groupNameTextField" focusColor="#67ffc8" layoutX="180.0" layoutY="489.0" onKeyPressed="#search" prefHeight="31.0" prefWidth="234.0" promptText="Group Name" style="-fx-prompt-text-fill: white; -fx-text-inner-color: #67FFC8;" unFocusColor="WHITE" />
+         </children>
+      </Pane>
+      <Pane fx:id="notificationPane" layoutX="297.0" layoutY="26.0" prefHeight="666.0" prefWidth="450.0" style="-fx-background-color: #373A44; -fx-background-radius: 15;" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="12.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notifications">
+               <font>
+                  <Font name="Consolas" size="36.0" />
+               </font>
+            </Text>
+            <JFXButton fx:id="refreshButton" layoutX="358.0" layoutY="10.0" onAction="#refreshButton" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #373A44; -fx-background-radius: 100;" text="⟳" textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <ripplerFill>
+                  <RadialGradient centerX="0.5284090909090909" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#ffffff00" />
+                        <Stop color="#69ffc8" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </ripplerFill>
+            </JFXButton>
+            <JFXListView fx:id="notificationListView" layoutX="12.0" layoutY="100.0" prefHeight="550.0" prefWidth="426.0" />
+         </children>
+      </Pane>
+   </children>
+</Pane>
